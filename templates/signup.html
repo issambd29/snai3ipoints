@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — Snai3i Points Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #F2A807;
+      --primary-hover: #d99206;
+      --navy: #1F1F38;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --error: #ef4444;
+      --success: #10b981;
+      --radius: 4px;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9fb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 420px;
+      padding: 40px 36px 32px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .logo-wrap img { height: 36px; }
+
+    .divider-v {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+    }
+
+    .brand-label {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--navy);
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 11px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-bottom: 20px;
+    }
+
+    .google-btn:hover { background: #f3f4f6; }
+
+    .google-btn svg { width: 18px; height: 18px; }
+
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .or-divider hr { flex: 1; border: none; border-top: 1px solid var(--border); }
+    .or-divider span { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      color: var(--navy);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(242,168,7,0.12); }
+    input.error { border-color: var(--error); }
+
+    .field { margin-bottom: 14px; }
+
+    .error-msg {
+      font-size: 11px;
+      color: var(--error);
+      font-weight: 600;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .password-wrap { position: relative; }
+
+    .toggle-pw {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 4px;
+    }
+
+    .strength-bar {
+      height: 4px;
+      border-radius: 2px;
+      background: #e5e7eb;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+
+    .strength-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.3s, background 0.3s;
+      width: 0%;
+    }
+
+    .strength-label {
+      font-size: 11px;
+      margin-top: 3px;
+      font-weight: 700;
+      display: none;
+    }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 8px;
+    }
+
+    .submit-btn:hover { background: var(--primary-hover); }
+    .submit-btn:active { transform: scale(0.98); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .terms {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    .terms a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+    .footer-link {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+
+    .footer-link a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+    .dev-banner {
+      margin-top: 20px;
+      background: rgba(242,168,7,0.1);
+      border: 1px solid rgba(242,168,7,0.3);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b45309;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card"> 
+  <div class="logo-wrap"> 
+    <img src="https://snai3i.org/assets/logo-M8ZZgvtS.svg" alt="Snai3i" /> 
+    <div class="divider-v"></div> 
+    <span class="brand-label">Points Tracker</span> 
+  </div> 
+
+  <h1>Create your account</h1> 
+  <p class="subtitle">Join Snai3i and start tracking your students</p> 
+
+  <div class="or-divider"> 
+    <hr /><span>or</span><hr /> 
+  </div> 
+
+  <!-- ✅ Django Form -->
+  <form method="POST"> 
+    {% csrf_token %}
+
+    <div class="row"> 
+      <div class="field"> 
+        <label>First name</label> 
+        <input type="text" name="first_name" placeholder="First name" required /> 
+      </div> 
+
+      <div class="field"> 
+        <label>Last name</label> 
+        <input type="text" name="last_name" placeholder="Last name" required /> 
+      </div> 
+    </div> 
+
+    <div class="field"> 
+      <label>Email address</label> 
+      <input type="email" name="email" placeholder="teacher@school.com" required /> 
+    </div> 
+
+    <div class="field"> 
+      <label>Password</label> 
+      <div class="password-wrap"> 
+        <input type="password" name="password" placeholder="Create a password" required /> 
+      </div> 
+    </div> 
+
+    <!-- ❗ إضافة تأكيد كلمة المرور -->
+    <div class="field"> 
+      <label>Confirm password</label> 
+      <div class="password-wrap"> 
+        <input type="password" name="confirm_password" placeholder="Repeat your password" required /> 
+      </div> 
+    </div> 
+
+    <!-- ✅ Errors -->
+    {% if error %}
+      <div style="color:red; text-align:center; margin-top:10px;">
+        {{ error }}
+      </div>
+    {% endif %}
+
+    <button type="submit" class="submit-btn"> 
+      Create Account
+    </button> 
+  </form> 
+
+  <p class="footer-link">
+    Already have an account?
+    <a href="/signin/">Sign in</a>
+  </p> 
+
+  <div class="dev-banner">Development mode</div> 
+</div>
+<script>
+  function togglePw(id) {
+    const el = document.getElementById(id);
+    el.type = el.type === 'password' ? 'text' : 'password';
+  }
+
+  function checkStrength() {
+    const pw = document.getElementById('password').value;
+    const fill = document.getElementById('strength-fill');
+    const label = document.getElementById('strength-label');
+
+    label.style.display = pw.length > 0 ? 'block' : 'none';
+
+    let score = 0;
+    if (pw.length >= 8) score++;
+    if (/[A-Z]/.test(pw)) score++;
+    if (/[0-9]/.test(pw)) score++;
+    if (/[^a-zA-Z0-9]/.test(pw)) score++;
+
+    const levels = [
+      { pct: '25%', color: '#ef4444', text: 'Weak' },
+      { pct: '50%', color: '#f97316', text: 'Fair' },
+      { pct: '75%', color: '#eab308', text: 'Good' },
+      { pct: '100%', color: '#10b981', text: 'Strong' },
+    ];
+    const lvl = levels[Math.max(score - 1, 0)];
+    fill.style.width = lvl.pct;
+    fill.style.background = lvl.color;
+    label.textContent = lvl.text;
+    label.style.color = lvl.color;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    let valid = true;
+
+    document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
+
+    const fn = document.getElementById('first-name').value.trim();
+    const ln = document.getElementById('last-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const pw = document.getElementById('password').value;
+    const cpw = document.getElementById('confirm-pw').value;
+
+    if (!fn) { document.getElementById('fn-err').style.display = 'block'; valid = false; }
+    if (!ln) { document.getElementById('ln-err').style.display = 'block'; valid = false; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('email-err').style.display = 'block'; valid = false; }
+    if (!pw || pw.length < 8) { document.getElementById('pw-err').style.display = 'block'; valid = false; }
+    if (pw !== cpw) { document.getElementById('cpw-err').style.display = 'block'; valid = false; }
+
+    if (!valid) return;
+
+    const btn = document.getElementById('submit-btn');
+    const txt = document.getElementById('btn-text');
+    const spin = document.getElementById('spinner');
+    btn.disabled = true;
+    txt.style.display = 'none';
+    spin.style.display = 'inline-block';
+
+    setTimeout(() => {
+      window.location.href = 'dashboard-teacher.html';
+    }, 1500);
+  }
+</script>
+</body>
+</html>

@@ -17,6 +17,7 @@
       --bg: #f9f9fb;
       --card: #ffffff;
       --destructive: #ef4444;
+      --destructive-hover: #dc2626;
       --radius: 4px;
     }
 
@@ -37,7 +38,7 @@
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
       height: 60px;
@@ -47,167 +48,77 @@
       gap: 16px;
     }
 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
+    .nav-brand { display: flex; align-items: center; gap: 10px; }
     .nav-brand img { height: 32px; }
-
-    .divider-v {
-      width: 1px;
-      height: 18px;
-      background: var(--border);
-    }
-
-    .nav-title {
-      font-weight: 800;
-      font-size: 13px;
-      color: var(--navy);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .divider-v { width: 1px; height: 18px; background: var(--border); }
+    .nav-title { font-weight: 800; font-size: 13px; color: var(--navy); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
 
     .avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 800;
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--primary); color: #fff;
+      font-weight: 800; font-size: 13px;
+      display: flex; align-items: center; justify-content: center;
     }
 
-    .user-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--navy);
-    }
+    .user-name { font-size: 13px; font-weight: 700; color: var(--navy); }
 
     .sign-out-btn {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 6px 12px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--muted);
-      cursor: pointer;
-      text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      background: none; border: 1px solid var(--border); border-radius: 8px;
+      padding: 6px 12px; font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 700; color: var(--muted);
+      cursor: pointer; text-decoration: none;
       transition: color 0.15s, background 0.15s, border-color 0.15s;
     }
-
-    .sign-out-btn:hover {
-      color: var(--destructive);
-      background: rgba(239,68,68,0.06);
-      border-color: var(--destructive);
-    }
+    .sign-out-btn:hover { color: var(--destructive); background: rgba(239,68,68,0.06); border-color: var(--destructive); }
 
     /* MAIN */
-    .main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 36px 24px 60px;
-    }
+    .main { max-width: 1200px; margin: 0 auto; padding: 36px 24px 60px; }
 
     .page-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 28px;
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 16px; margin-bottom: 28px;
     }
-
-    .page-header h1 {
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--navy);
-    }
-
-    .page-header p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 3px;
-    }
+    .page-header h1 { font-size: 22px; font-weight: 900; color: var(--navy); }
+    .page-header p { font-size: 13px; color: var(--muted); margin-top: 3px; }
 
     .add-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      padding: 11px 22px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: background 0.15s, box-shadow 0.15s;
-      box-shadow: 0 2px 10px rgba(242,168,7,0.35);
-      white-space: nowrap;
-      flex-shrink: 0;
+      display: flex; align-items: center; gap: 8px;
+      background: var(--primary); color: #fff;
+      border: none; border-radius: 999px; padding: 11px 22px;
+      font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800;
+      cursor: pointer; transition: background 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 10px rgba(242,168,7,0.35); white-space: nowrap; flex-shrink: 0;
     }
-
     .add-btn:hover { background: var(--primary-hover); box-shadow: 0 4px 14px rgba(242,168,7,0.45); }
 
     /* TABS */
     .tabs {
-      display: flex;
-      gap: 4px;
-      background: #f3f4f6;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 4px;
-      width: fit-content;
-      margin-bottom: 20px;
+      display: flex; gap: 4px;
+      background: #f3f4f6; border: 1px solid var(--border); border-radius: 8px;
+      padding: 4px; width: fit-content; margin-bottom: 20px;
     }
-
     .tab-btn {
-      padding: 8px 20px;
-      border: none;
-      border-radius: 6px;
-      background: transparent;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--muted);
-      cursor: pointer;
-      transition: background 0.15s, color 0.15s;
+      padding: 8px 20px; border: none; border-radius: 6px;
+      background: transparent; font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 700; color: var(--muted);
+      cursor: pointer; transition: background 0.15s, color 0.15s;
     }
+    .tab-btn.active { background: var(--primary); color: #fff; }
 
-    .tab-btn.active {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    /* TABLE CARD */
+    /* TABLE */
     .table-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
-      overflow: hidden;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; box-shadow: 0 1px 8px rgba(0,0,0,0.04); overflow: hidden;
     }
 
-    /* FIX: single authoritative grid definition */
+    /* 8 columns: rank | student | pts | coins | division | add pts | subtract pts | actions */
     .table-head,
     .table-row {
       display: grid;
-      grid-template-columns: 52px 1.8fr 90px 90px 1fr 210px 80px;
-      gap: 12px;
+      grid-template-columns: 52px 1.6fr 80px 80px 1fr 180px 180px 80px;
+      gap: 10px;
       align-items: center;
     }
 
@@ -215,11 +126,8 @@
       padding: 12px 16px;
       background: #f9f9fb;
       border-bottom: 1px solid var(--border);
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-size: 11px; font-weight: 800; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.5px;
     }
 
     .table-row {
@@ -227,332 +135,193 @@
       border-bottom: 1px solid var(--border);
       transition: background 0.12s;
     }
-
     .table-row:last-child { border-bottom: none; }
     .table-row:hover { background: #fafafa; }
 
-    /* FIX: flash animation defined once */
-    @keyframes flash {
+    @keyframes flash-add {
       0%   { background: rgba(242,168,7,0.18); }
       100% { background: transparent; }
     }
-    .table-row.flash { animation: flash 0.7s ease; }
+    @keyframes flash-sub {
+      0%   { background: rgba(239,68,68,0.12); }
+      100% { background: transparent; }
+    }
+    .table-row.flash-add { animation: flash-add 0.7s ease; }
+    .table-row.flash-sub { animation: flash-sub 0.7s ease; }
 
     .col-center { text-align: center; }
 
-    .rank-cell {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
+    .rank-cell { display: flex; align-items: center; justify-content: center; }
     .rank-box {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: #f3f4f6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 14px;
-      color: var(--muted);
+      width: 36px; height: 36px; border-radius: 8px;
+      background: #f3f4f6; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 14px; color: var(--muted);
     }
-
-    /* FIX: rank medal colors now actually applied via JS */
     .rank-box.gold   { background: rgba(234,179,8,0.15);  color: #a16207; }
     .rank-box.silver { background: rgba(156,163,175,0.25); color: #4b5563; }
     .rank-box.bronze { background: rgba(180,120,80,0.2);  color: #92400e; }
 
-    .player-name {
-      font-weight: 800;
-      font-size: 14px;
-      color: var(--navy);
-      line-height: 1.2;
-    }
-
-    .player-age {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 1px;
-    }
+    .player-name { font-weight: 800; font-size: 14px; color: var(--navy); line-height: 1.2; }
+    .player-age  { font-size: 12px; color: var(--muted); margin-top: 1px; }
 
     .pts-val {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-weight: 800;
-      font-size: 15px;
-      color: var(--primary);
+      display: flex; align-items: center; gap: 5px;
+      font-weight: 800; font-size: 15px; color: var(--primary);
       font-variant-numeric: tabular-nums;
     }
-
     .coins-val {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-weight: 800;
-      font-size: 15px;
-      color: #ca8a04;
+      display: flex; align-items: center; gap: 5px;
+      font-weight: 800; font-size: 15px; color: #ca8a04;
       font-variant-numeric: tabular-nums;
     }
 
     .division {
-      font-size: 13px;
-      color: var(--muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: 13px; color: var(--muted);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
 
-    /* FIX: add-pts-cell with input + button as designed in CSS */
-    .add-pts-cell {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    /* ADD / SUBTRACT cells share same layout */
+    .add-pts-cell,
+    .sub-pts-cell {
+      display: flex; align-items: center; gap: 6px;
     }
 
     .pts-input {
-      width: 58px;
-      padding: 7px 8px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--navy);
-      text-align: center;
-      outline: none;
+      width: 54px; padding: 7px 6px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700;
+      color: var(--navy); text-align: center; outline: none;
     }
-
     .pts-input:focus { border-color: var(--primary); }
 
-    .pts-submit {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 7px 12px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: background 0.15s;
-      white-space: nowrap;
-    }
+    /* sub input — red focus ring */
+    .sub-input:focus { border-color: var(--destructive); }
 
+    .pts-submit {
+      display: flex; align-items: center; gap: 4px;
+      padding: 7px 10px;
+      background: var(--primary); color: #fff;
+      border: none; border-radius: 999px;
+      font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800;
+      cursor: pointer; transition: background 0.15s; white-space: nowrap;
+    }
     .pts-submit:hover { background: var(--primary-hover); }
 
+    /* subtract button — red pill */
+    .pts-subtract {
+      display: flex; align-items: center; gap: 4px;
+      padding: 7px 10px;
+      background: rgba(239,68,68,0.08);
+      color: var(--destructive);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800;
+      cursor: pointer; transition: background 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .pts-subtract:hover {
+      background: rgba(239,68,68,0.15);
+      border-color: var(--destructive);
+    }
+
     .actions-cell {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 2px;
+      display: flex; align-items: center; justify-content: flex-end; gap: 2px;
     }
-
     .icon-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      transition: background 0.12s, color 0.12s;
+      width: 32px; height: 32px; border-radius: 6px; border: none;
+      background: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); transition: background 0.12s, color 0.12s;
     }
-
     .icon-btn:hover     { background: #f3f4f6; color: var(--navy); }
     .icon-btn.del:hover { background: rgba(239,68,68,0.08); color: var(--destructive); }
 
     .empty-state {
-      padding: 64px 24px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
+      padding: 64px 24px; text-align: center; color: var(--muted); font-size: 14px;
     }
-
     .empty-icon {
-      width: 56px;
-      height: 56px;
-      background: rgba(242,168,7,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
+      width: 56px; height: 56px; background: rgba(242,168,7,0.1); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
     }
 
     /* MODAL */
     .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 24px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000; padding: 24px;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
     }
-
     .modal-overlay.open { opacity: 1; pointer-events: all; }
 
     .modal {
-      background: #fff;
-      border-radius: 12px;
-      padding: 32px 28px;
-      width: 100%;
-      max-width: 400px;
+      background: #fff; border-radius: 12px; padding: 32px 28px;
+      width: 100%; max-width: 400px;
       box-shadow: 0 16px 48px rgba(0,0,0,0.18);
-      transform: scale(0.95);
-      transition: transform 0.2s;
+      transform: scale(0.95); transition: transform 0.2s;
     }
-
     .modal-overlay.open .modal { transform: scale(1); }
 
-    .modal h2 {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 20px;
-    }
-
+    .modal h2 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
     .modal .field { margin-bottom: 14px; }
-
     .modal label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 5px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+      display: block; font-size: 12px; font-weight: 700; color: var(--navy);
+      margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.3px;
     }
-
     .modal input {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      color: var(--navy);
-      outline: none;
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--navy); outline: none;
     }
+    .modal input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(242,168,7,0.1); }
 
-    .modal input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(242,168,7,0.1);
-    }
-
-    .modal-footer {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
+    .modal-footer { display: flex; gap: 10px; margin-top: 20px; }
     .btn-cancel {
-      flex: 1;
-      padding: 11px;
-      background: #f3f4f6;
-      color: var(--navy);
-      border: none;
-      border-radius: 999px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
+      flex: 1; padding: 11px; background: #f3f4f6; color: var(--navy);
+      border: none; border-radius: 999px;
+      font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer;
     }
-
     .btn-cancel:hover { background: #e5e7eb; }
-
     .btn-confirm {
-      flex: 1;
-      padding: 11px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 800;
-      cursor: pointer;
+      flex: 1; padding: 11px; background: var(--primary); color: #fff;
+      border: none; border-radius: 999px;
+      font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer;
     }
-
     .btn-confirm:hover  { background: var(--primary-hover); }
     .btn-confirm.danger { background: var(--destructive); }
-    .btn-confirm.danger:hover { background: #dc2626; }
+    .btn-confirm.danger:hover { background: var(--destructive-hover); }
 
     /* TOAST */
     .toast-wrap {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 9999;
+      position: fixed; bottom: 28px; right: 28px;
+      display: flex; flex-direction: column; gap: 10px; z-index: 9999;
     }
-
     .toast {
-      background: #fff;
-      border: 1px solid var(--border);
+      background: #fff; border: 1px solid var(--border);
       border-left: 4px solid var(--primary);
-      border-radius: 10px;
-      padding: 14px 18px;
+      border-radius: 10px; padding: 14px 18px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-      min-width: 240px;
-      max-width: 320px;
-      animation: slideIn 0.25s ease;
-      transition: opacity 0.3s;
+      min-width: 240px; max-width: 320px;
+      animation: slideIn 0.25s ease; transition: opacity 0.3s;
     }
-
-    .toast.coin {
-      background: #fefce8;
-      border-color: #fde68a;
-      border-left-color: #ca8a04;
-    }
-
-    .toast-title {
-      font-weight: 800;
-      font-size: 14px;
-      color: var(--navy);
-    }
-
-    .toast-desc {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 3px;
-    }
+    .toast.coin   { background: #fefce8; border-color: #fde68a; border-left-color: #ca8a04; }
+    .toast.danger { background: #fff5f5; border-color: #fecaca; border-left-color: var(--destructive); }
+    .toast-title  { font-weight: 800; font-size: 14px; color: var(--navy); }
+    .toast-desc   { font-size: 12px; color: var(--muted); margin-top: 3px; }
 
     @keyframes slideIn {
       from { opacity: 0; transform: translateX(20px); }
       to   { opacity: 1; transform: translateX(0); }
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .table-head { display: none; }
-      .table-row {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        padding: 16px;
-      }
+      .table-row { grid-template-columns: 1fr 1fr; gap: 8px; padding: 16px; }
       .rank-cell { justify-content: flex-start; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-brand">
@@ -564,9 +333,7 @@
       <div class="avatar">
         {{ request.user.first_name|slice:":1" }}{{ request.user.last_name|slice:":1" }}
       </div>
-      <span class="user-name">
-        {{ request.user.first_name }} {{ request.user.last_name }}
-      </span>
+      <span class="user-name">{{ request.user.first_name }} {{ request.user.last_name }}</span>
       <a href="{% url 'signout' %}" class="sign-out-btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
@@ -579,7 +346,6 @@
   </div>
 </nav>
 
-<!-- MAIN -->
 <main class="main">
   <div class="page-header">
     <div>
@@ -607,12 +373,12 @@
       <div>Coins</div>
       <div>Division</div>
       <div>Add Points</div>
+      <div>Subtract Points</div>
       <div class="col-center">Actions</div>
     </div>
 
     <div id="student-list">
       {% for student in students %}
-      {# Store original index as data attr for "All Students" sort #}
       <div class="table-row"
            id="row-{{ student.id }}"
            data-id="{{ student.id }}"
@@ -621,12 +387,10 @@
 
         <!-- Rank -->
         <div class="rank-cell">
-          <div class="rank-box" id="rank-box-{{ student.id }}">
-            {{ forloop.counter }}
-          </div>
+          <div class="rank-box" id="rank-box-{{ student.id }}">{{ forloop.counter }}</div>
         </div>
 
-        <!-- Student name + age -->
+        <!-- Student -->
         <div>
           <div class="player-name" id="name-{{ student.id }}">
             {{ student.user.first_name }} {{ student.user.last_name }}
@@ -635,28 +399,20 @@
         </div>
 
         <!-- Points -->
-        <div class="pts-val" id="points-{{ student.id }}">
-          {{ student.points }}
-        </div>
+        <div class="pts-val" id="points-{{ student.id }}">{{ student.points }}</div>
 
         <!-- Coins -->
-        <div class="coins-val" id="coins-{{ student.id }}">
-          {{ student.coins }}
-        </div>
+        <div class="coins-val" id="coins-{{ student.id }}">{{ student.coins }}</div>
 
         <!-- Division -->
-        <div class="division" id="division-{{ student.id }}">
-          {{ student.division }}
-        </div>
+        <div class="division" id="division-{{ student.id }}">{{ student.division }}</div>
 
-        <!-- Add Points: input + button -->
+        <!-- Add Points -->
         <div class="add-pts-cell">
           <input class="pts-input"
                  type="number"
                  id="pts-input-{{ student.id }}"
-                 value="1"
-                 min="1"
-                 max="9999" />
+                 value="1" min="0.1" step="0.1" max="9999" />
           <button class="pts-submit" onclick="addPoints({{ student.id }})">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
@@ -665,19 +421,30 @@
           </button>
         </div>
 
-        <!-- Actions: edit + delete -->
+        <!-- ▼ NEW: Subtract Points -->
+        <div class="sub-pts-cell">
+          <input class="pts-input sub-input"
+                 type="number"
+                 id="sub-input-{{ student.id }}"
+                 value="1" min="0.1" step="0.1" max="9999" />
+          <button class="pts-subtract" onclick="subtractPoints({{ student.id }})">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Sub
+          </button>
+        </div>
+
+        <!-- Actions -->
         <div class="actions-cell">
-          <button class="icon-btn"
-                  title="Edit"
+          <button class="icon-btn" title="Edit"
                   onclick="openEditModal({{ student.id }}, '{{ student.user.first_name }} {{ student.user.last_name }}', {{ student.age }}, '{{ student.division }}')">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
               <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
             </svg>
           </button>
-          <button class="icon-btn del"
-                  title="Delete"
-                  onclick="deleteStudent({{ student.id }})">
+          <button class="icon-btn del" title="Delete" onclick="deleteStudent({{ student.id }})">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="3 6 5 6 21 6"/>
               <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
@@ -719,7 +486,6 @@
       <label>Place / Division</label>
       <input type="text" id="m-division" placeholder="Division" />
     </div>
-    <!-- shown only when adding a new student -->
     <div class="field" id="field-email">
       <label>Email (login)</label>
       <input type="email" id="m-email" placeholder="student@email.com" />
@@ -735,198 +501,252 @@
   </div>
 </div>
 
-<!-- TOAST CONTAINER -->
 <div class="toast-wrap" id="toast-wrap"></div>
 
 <script>
   let editId = null;
 
-  /* ─── CSRF ─── */
+  /* ── CSRF ── */
   function getCSRFToken() {
-    const match = document.cookie.split(';')
-      .map(c => c.trim())
-      .find(c => c.startsWith('csrftoken='));
+    const match = document.cookie.split(';').map(c => c.trim()).find(c => c.startsWith('csrftoken='));
     return match ? decodeURIComponent(match.split('=')[1]) : '';
   }
 
-  /* ─── ADD POINTS (AJAX) ─── */
+  /* ── ADD POINTS ── */
   function addPoints(studentId) {
-    const input = document.getElementById('pts-input-' + studentId);
-    const amount = parseInt(input.value, 10);
-
-    if (!amount || amount < 1) {
-      toast('Invalid', 'Enter a positive number of points.');
-      return;
-    }
+    const input  = document.getElementById('pts-input-' + studentId);
+    const amount = parseFloat(input.value);
+    if (!amount || amount <= 0) { toast('Invalid', 'Enter a positive number of points.'); return; }
 
     fetch('/add-points/' + studentId + '/', {
       method: 'POST',
-      headers: {
-        'X-CSRFToken': getCSRFToken(),
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ amount: amount }),
+      headers: { 'X-CSRFToken': getCSRFToken(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amount }),
     })
-    .then(res => res.json())
+    .then(r => r.json())
     .then(data => {
       if (data.success) {
-        const row = document.getElementById('row-' + studentId);
-        const ptsEl = document.getElementById('points-' + studentId);
-        const coinsEl = document.getElementById('coins-' + studentId);
-
-        ptsEl.textContent = data.points;
-        coinsEl.textContent = data.coins;
-
-        /* update data-attr for re-sorting */
-        row.dataset.points = data.points;
-
-        /* flash row */
-        row.classList.remove('flash');
-        void row.offsetWidth; /* reflow to restart animation */
-        row.classList.add('flash');
-        setTimeout(() => row.classList.remove('flash'), 700);
-
-        /* coin toast when a new coin is earned */
+        updateRowValues(studentId, data.points, data.coins);
+        input.value = 1; // reset add input
+        flashRow(studentId, 'add');
         if (data.new_coins && data.new_coins > 0) {
-          toast('Coin earned! 🪙', data.new_coins + ' new coin(s) awarded!', true);
+          toast('Coin earned! 🪙', data.new_coins + ' new coin(s) awarded!', 'coin');
         } else {
-          toast('Points added', '+' + amount + ' points added.');
+          toast('Points added', '+' + fmtPts(amount) + ' points added.');
         }
-
-        /* re-sort if leaderboard tab is active */
         if (currentTab === 'leaderboard') sortRows('leaderboard');
       } else {
-        toast('Error', data.error || 'Failed to add points.');
+        toast('Error', data.error || 'Failed to add points.', 'danger');
       }
     })
-    .catch(() => toast('Error', 'Network error — please try again.'));
+    .catch(() => toast('Error', 'Network error — please try again.', 'danger'));
   }
 
-  /* ─── DELETE STUDENT (AJAX) ─── */
+  /* ── SUBTRACT POINTS ── */
+  function subtractPoints(studentId) {
+    const input  = document.getElementById('sub-input-' + studentId);
+    const amount = parseFloat(input.value);
+    if (!amount || amount <= 0) { toast('Invalid', 'Enter a positive number of points.', 'danger'); return; }
+
+    const currentPts = parseFloat(document.getElementById('row-' + studentId).dataset.points);
+    if (amount > currentPts) {
+      toast('Too many', 'Cannot subtract more than current points (' + currentPts + ').', 'danger');
+      return;
+    }
+
+    fetch('/subtract-points/' + studentId + '/', {
+      method: 'POST',
+      headers: { 'X-CSRFToken': getCSRFToken(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amount }),
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.success) {
+        updateRowValues(studentId, data.points, data.coins);
+        input.value = 1; // reset sub input
+        flashRow(studentId, 'sub');
+        toast('Points removed', '−' + fmtPts(amount) + ' points subtracted.', 'danger');
+        if (currentTab === 'leaderboard') sortRows('leaderboard');
+      } else {
+        toast('Error', data.error || 'Failed to subtract points.', 'danger');
+      }
+    })
+    .catch(() => toast('Error', 'Network error — please try again.', 'danger'));
+  }
+
+  /* ── SHARED ROW HELPERS ── */
+  function fmtPts(v) {
+    // Show 5 as "5", 5.5 as "5.5" — no unnecessary ".0"
+    const n = parseFloat(v);
+    return Number.isInteger(n) ? String(n) : n.toFixed(1);
+  }
+
+  function updateRowValues(studentId, points, coins) {
+    document.getElementById('points-' + studentId).textContent = fmtPts(points);
+    document.getElementById('coins-'  + studentId).textContent = coins;
+    document.getElementById('row-'    + studentId).dataset.points = points;
+  }
+
+  function flashRow(studentId, type) {
+    const row = document.getElementById('row-' + studentId);
+    row.classList.remove('flash-add', 'flash-sub');
+    void row.offsetWidth;
+    row.classList.add(type === 'add' ? 'flash-add' : 'flash-sub');
+    setTimeout(() => row.classList.remove('flash-add', 'flash-sub'), 700);
+  }
+
+  /* ── DELETE ── */
   function deleteStudent(studentId) {
     if (!confirm('Delete this student? This cannot be undone.')) return;
-
     fetch('/delete-student/' + studentId + '/', {
       method: 'POST',
-      headers: {
-        'X-CSRFToken': getCSRFToken(),
-        'Content-Type': 'application/json',
-      },
+      headers: { 'X-CSRFToken': getCSRFToken(), 'Content-Type': 'application/json' },
     })
-    .then(res => res.json())
+    .then(r => r.json())
     .then(data => {
       if (data.success) {
         document.getElementById('row-' + studentId).remove();
         updateRanks();
         toast('Removed', 'Student deleted.');
       } else {
-        toast('Error', data.error || 'Failed to delete student.');
+        toast('Error', data.error || 'Failed to delete.', 'danger');
       }
     })
-    .catch(() => toast('Error', 'Network error — please try again.'));
+    .catch(() => toast('Error', 'Network error — please try again.', 'danger'));
   }
 
-  /* ─── EDIT MODAL ─── */
-  /* FIX: pass student data directly from Django template to avoid needing a
-     separate /get-student/ endpoint that may not exist */
+  /* ── EDIT MODAL ── */
   function openEditModal(id, name, age, division) {
     editId = id;
     document.getElementById('modal-title').textContent = 'Edit Student';
     document.getElementById('modal-confirm-btn').textContent = 'Save Changes';
     document.getElementById('m-name').value = name;
-    document.getElementById('m-age').value = age;
+    document.getElementById('m-age').value  = age;
     document.getElementById('m-division').value = division;
-    document.getElementById('field-email').style.display = 'none';
+    document.getElementById('field-email').style.display    = 'none';
     document.getElementById('field-password').style.display = 'none';
     document.getElementById('modal-overlay').classList.add('open');
     document.getElementById('m-name').focus();
   }
 
-  /* ─── ADD MODAL ─── */
   function openAddModal() {
     editId = null;
     document.getElementById('modal-title').textContent = 'New Student';
     document.getElementById('modal-confirm-btn').textContent = 'Add Student';
-    document.getElementById('m-name').value = '';
-    document.getElementById('m-age').value = '';
-    document.getElementById('m-division').value = '';
-    document.getElementById('m-email').value = '';
-    document.getElementById('m-password').value = '';
-    document.getElementById('field-email').style.display = '';
+    ['m-name','m-age','m-division','m-email','m-password'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('field-email').style.display    = '';
     document.getElementById('field-password').style.display = '';
     document.getElementById('modal-overlay').classList.add('open');
     document.getElementById('m-name').focus();
   }
 
-  function closeModal() {
-    document.getElementById('modal-overlay').classList.remove('open');
-  }
-
-  /* FIX: only close when clicking the backdrop, not the modal itself */
-  function handleOverlayClick(e) {
-    if (e.target === document.getElementById('modal-overlay')) closeModal();
-  }
+  function closeModal() { document.getElementById('modal-overlay').classList.remove('open'); }
+  function handleOverlayClick(e) { if (e.target === document.getElementById('modal-overlay')) closeModal(); }
 
   function confirmModal() {
     const name     = document.getElementById('m-name').value.trim();
     const age      = parseInt(document.getElementById('m-age').value, 10);
     const division = document.getElementById('m-division').value.trim();
+    if (!name || !age || !division) { toast('Incomplete', 'Please fill in all fields.'); return; }
 
-    if (!name || !age || !division) {
-      toast('Incomplete', 'Please fill in all fields.');
-      return;
-    }
-
-    const url = editId ? '/update-student/' + editId + '/' : '/add-student/';
+    const url  = editId ? '/update-student/' + editId + '/' : '/add-student/';
     const body = { name, age, division };
 
     if (!editId) {
       const email    = document.getElementById('m-email').value.trim();
       const password = document.getElementById('m-password').value.trim();
-      if (!email || !password) {
-        toast('Incomplete', 'Email and password are required for new students.');
-        return;
-      }
-      body.email    = email;
-      body.password = password;
+      if (!email || !password) { toast('Incomplete', 'Email and password are required.'); return; }
+      body.email = email; body.password = password;
     }
 
     fetch(url, {
       method: 'POST',
-      headers: {
-        'X-CSRFToken': getCSRFToken(),
-        'Content-Type': 'application/json',
-      },
+      headers: { 'X-CSRFToken': getCSRFToken(), 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     })
-    .then(res => res.json())
+    .then(r => r.json())
     .then(data => {
       if (data.success) {
         if (editId) {
-          /* FIX: update all relevant cells in-place */
-          document.getElementById('name-' + editId).textContent = name;
-          document.getElementById('age-' + editId).textContent = 'Age ' + age;
+          document.getElementById('name-'     + editId).textContent = name;
+          document.getElementById('age-'      + editId).textContent = 'Age ' + age;
           document.getElementById('division-' + editId).textContent = division;
-          /* keep edit button's inline data in sync */
-          const row = document.getElementById('row-' + editId);
-          const editBtn = row.querySelector('.icon-btn:not(.del)');
+          const editBtn = document.getElementById('row-' + editId).querySelector('.icon-btn:not(.del)');
           editBtn.setAttribute('onclick',
-            "openEditModal(" + editId + ", '" + name.replace(/'/g, "\\'") + "', " + age + ", '" + division.replace(/'/g, "\\'") + "')");
+            "openEditModal(" + editId + ",'" + name.replace(/'/g,"\\'") + "'," + age + ",'" + division.replace(/'/g,"\\'") + "')");
           toast('Saved', name + "'s details updated.");
         } else {
-          window.location.reload();
+          // Inject new row without page reload
+          const newId    = data.student_id;
+          const allRows  = document.querySelectorAll('#student-list .table-row');
+          const newOrder = allRows.length;
+          const row = document.createElement('div');
+          row.className   = 'table-row';
+          row.id          = 'row-'  + newId;
+          row.dataset.id     = newId;
+          row.dataset.order  = newOrder;
+          row.dataset.points = 0;
+          row.innerHTML = `
+            <div class="rank-cell"><div class="rank-box" id="rank-box-${newId}">—</div></div>
+            <div>
+              <div class="player-name" id="name-${newId}">${name}</div>
+              <div class="player-age"  id="age-${newId}">Age ${age}</div>
+            </div>
+            <div class="pts-val"   id="points-${newId}">0</div>
+            <div class="coins-val" id="coins-${newId}">0</div>
+            <div class="division"  id="division-${newId}">${division}</div>
+            <div class="add-pts-cell">
+              <input class="pts-input" type="number" id="pts-input-${newId}" value="1" min="0.1" step="0.1" max="9999" />
+              <button class="pts-submit" onclick="addPoints(${newId})">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                Add
+              </button>
+            </div>
+            <div class="sub-pts-cell">
+              <input class="pts-input sub-input" type="number" id="sub-input-${newId}" value="1" min="0.1" step="0.1" max="9999" />
+              <button class="pts-subtract" onclick="subtractPoints(${newId})">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                Sub
+              </button>
+            </div>
+            <div class="actions-cell">
+              <button class="icon-btn" title="Edit"
+                      onclick="openEditModal(${newId},'${name.replace(/'/g,"\\'")}',${age},'${division.replace(/'/g,"\\'")}')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+              </button>
+              <button class="icon-btn del" title="Delete" onclick="deleteStudent(${newId})">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6"/>
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                  <path d="M10 11v6"/><path d="M14 11v6"/>
+                  <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+                </svg>
+              </button>
+            </div>`;
+          // Remove empty-state placeholder if present
+          const empty = document.querySelector('#student-list .empty-state');
+          if (empty) empty.remove();
+          document.getElementById('student-list').appendChild(row);
+          updateRanks();
+          toast('Added', name + ' was added to the class.');
         }
         closeModal();
       } else {
-        toast('Error', data.error || 'Operation failed.');
+        toast('Error', data.error || 'Operation failed.', 'danger');
       }
     })
-    .catch(() => toast('Error', 'Network error — please try again.'));
+    .catch(() => toast('Error', 'Network error — please try again.', 'danger'));
   }
 
-  /* ─── TABS ─── */
+  /* ── TABS ── */
   let currentTab = 'leaderboard';
-
   function setTab(t, btn) {
     currentTab = t;
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -937,58 +757,46 @@
   function sortRows(tab) {
     const list = document.getElementById('student-list');
     const rows = Array.from(list.querySelectorAll('.table-row'));
-
     if (tab === 'leaderboard') {
-      rows.sort((a, b) => parseInt(b.dataset.points, 10) - parseInt(a.dataset.points, 10));
+      rows.sort((a, b) => parseFloat(b.dataset.points) - parseFloat(a.dataset.points));
     } else {
-      rows.sort((a, b) => parseInt(a.dataset.order, 10) - parseInt(b.dataset.order, 10));
+      rows.sort((a, b) => parseInt(a.dataset.order,10)  - parseInt(b.dataset.order,10));
     }
-
     rows.forEach(row => list.appendChild(row));
     updateRanks();
   }
 
-  /* ─── RANK UPDATE ─── */
-  /* FIX: target rank-box by ID, apply medal classes correctly */
+  /* ── RANKS ── */
   function updateRanks() {
-    const rows = Array.from(document.getElementById('student-list').querySelectorAll('.table-row'));
-    const medals = ['gold', 'silver', 'bronze'];
-
+    const rows   = Array.from(document.getElementById('student-list').querySelectorAll('.table-row'));
+    const medals = ['gold','silver','bronze'];
     rows.forEach((row, idx) => {
-      const id  = row.dataset.id;
-      const box = document.getElementById('rank-box-' + id);
+      const box = document.getElementById('rank-box-' + row.dataset.id);
       if (!box) return;
-
       box.textContent = idx + 1;
       box.className   = 'rank-box';
-      if (idx < 3 && currentTab === 'leaderboard') {
-        box.classList.add(medals[idx]);
-      }
+      if (idx < 3 && currentTab === 'leaderboard') box.classList.add(medals[idx]);
     });
   }
 
-  /* ─── TOAST ─── */
-  function toast(title, desc, isCoin = false) {
+  /* ── TOAST ── */
+  function toast(title, desc, type = '') {
     const wrap = document.getElementById('toast-wrap');
     const el   = document.createElement('div');
-    el.className = 'toast' + (isCoin ? ' coin' : '');
+    el.className = 'toast' + (type ? ' ' + type : '');
     el.innerHTML = '<div class="toast-title">' + title + '</div>'
                  + '<div class="toast-desc">'  + desc  + '</div>';
     wrap.appendChild(el);
-    setTimeout(() => {
-      el.style.opacity = '0';
-      setTimeout(() => el.remove(), 300);
-    }, 2800);
+    setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 300); }, 2800);
   }
 
-  /* ─── KEYBOARD SHORTCUTS ─── */
+  /* ── KEYBOARD ── */
   document.addEventListener('keydown', e => {
-    const overlayOpen = document.getElementById('modal-overlay').classList.contains('open');
-    if (e.key === 'Escape' && overlayOpen) closeModal();
-    if (e.key === 'Enter'  && overlayOpen) confirmModal();
+    const open = document.getElementById('modal-overlay').classList.contains('open');
+    if (e.key === 'Escape' && open) closeModal();
+    if (e.key === 'Enter'  && open) confirmModal();
   });
 
-  /* ─── INIT: apply medals on page load ─── */
   updateRanks();
 </script>
 </body>

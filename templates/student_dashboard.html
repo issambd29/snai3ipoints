@@ -17,6 +17,8 @@
       --bg: #f9f9fb;
       --card: #ffffff;
       --radius: 12px;
+      --danger: #ef4444;
+      --danger-hover: #dc2626;
     }
 
     body {
@@ -155,6 +157,35 @@
       margin-top: 8px;
     }
 
+    /* SUBTRACT POINTS BUTTON — inside points card */
+    .stat-action-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .btn-subtract {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 5px 11px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.15s, background 0.15s, border-color 0.15s;
+    }
+
+    .btn-subtract:hover {
+      color: var(--danger);
+      background: rgba(239,68,68,0.06);
+      border-color: var(--danger);
+    }
+
     /* PROGRESS */
     .progress-card {
       background: var(--card);
@@ -232,6 +263,8 @@
     .info-row-label { color: var(--muted); font-weight: 600; }
     .info-row-value { font-weight: 800; color: var(--navy); }
 
+    /* division — read-only for students */
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -245,6 +278,158 @@
     .badge-student {
       background: rgba(242,168,7,0.12);
       color: #92400e;
+    }
+
+    /* ======== MODAL ======== */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 28px 28px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.18);
+      animation: modalIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.92) translateY(8px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: rgba(239,68,68,0.1);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .modal h2 {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .modal p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 22px;
+      line-height: 1.55;
+    }
+
+    .modal-input-group {
+      margin-bottom: 20px;
+    }
+
+    .modal-input-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 7px;
+    }
+
+    .modal-input {
+      width: 100%;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      border: 1.5px solid var(--border);
+      border-radius: 9px;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .modal-input:focus { border-color: var(--danger); }
+
+    .modal-input.error { border-color: var(--danger); background: rgba(239,68,68,0.04); }
+
+    .modal-error {
+      font-size: 11px;
+      color: var(--danger);
+      font-weight: 700;
+      margin-top: 5px;
+      min-height: 16px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-modal-cancel {
+      flex: 1;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-modal-cancel:hover { border-color: var(--muted); color: var(--navy); }
+
+    .btn-modal-confirm {
+      flex: 1;
+      background: var(--danger);
+      border: none;
+      border-radius: 9px;
+      padding: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn-modal-confirm:hover { background: var(--danger-hover); }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      z-index: 300;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
   </style>
 </head>
@@ -287,8 +472,17 @@
         </svg>
       </div>
       <div class="stat-label">Total Points</div>
-      <div class="stat-value">{{ student.points }}</div>
+      <div class="stat-value" id="points-display">{{ student.points }}</div>
       <div class="stat-hint">Keep earning to unlock coins!</div>
+      <!-- ▼ NEW: Subtract points button -->
+      <div class="stat-action-row">
+        <button class="btn-subtract" onclick="openSubtractModal()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          Subtract Points
+        </button>
+      </div>
     </div>
 
     <!-- Coins -->
@@ -344,10 +538,13 @@
       <span class="info-row-label">Full Name</span>
       <span class="info-row-value">{{ request.user.first_name }} {{ request.user.last_name }}</span>
     </div>
+
+    <!-- Division — read-only for students -->
     <div class="info-row">
       <span class="info-row-label">Division</span>
       <span class="info-row-value">{{ student.division }}</span>
     </div>
+
     <div class="info-row">
       <span class="info-row-label">Age</span>
       <span class="info-row-value">{{ student.age }}</span>
@@ -362,6 +559,140 @@
     </div>
   </div>
 </main>
+
+<!-- ======== SUBTRACT POINTS MODAL ======== -->
+<div class="modal-backdrop" id="subtract-modal" onclick="handleBackdropClick(event)">
+  <div class="modal">
+    <div class="modal-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="8" y1="12" x2="16" y2="12"/>
+      </svg>
+    </div>
+    <h2>Subtract Points</h2>
+    <p>Enter the number of points to remove from <strong>{{ request.user.first_name }}</strong>'s total. This cannot be undone.</p>
+    <div class="modal-input-group">
+      <label for="subtract-input">Points to subtract</label>
+      <input
+        class="modal-input"
+        id="subtract-input"
+        type="number"
+        min="0.1"
+        step="0.1"
+        placeholder="e.g. 0.5"
+        oninput="clearSubtractError()"
+      />
+      <div class="modal-error" id="subtract-error"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-modal-cancel" onclick="closeSubtractModal()">Cancel</button>
+      <button class="btn-modal-confirm" onclick="confirmSubtract()">Subtract</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ─── Current points (Django will render the real value) ───────────────────
+  let currentPoints = parseFloat("{{ student.points }}") || 0;
+
+  // ─── SUBTRACT MODAL ───────────────────────────────────────────────────────
+  function openSubtractModal() {
+    document.getElementById('subtract-input').value = '';
+    document.getElementById('subtract-error').textContent = '';
+    document.getElementById('subtract-input').classList.remove('error');
+    document.getElementById('subtract-modal').classList.add('open');
+    setTimeout(() => document.getElementById('subtract-input').focus(), 100);
+  }
+
+  function closeSubtractModal() {
+    document.getElementById('subtract-modal').classList.remove('open');
+  }
+
+  function handleBackdropClick(e) {
+    if (e.target === document.getElementById('subtract-modal')) {
+      closeSubtractModal();
+    }
+  }
+
+  function clearSubtractError() {
+    document.getElementById('subtract-error').textContent = '';
+    document.getElementById('subtract-input').classList.remove('error');
+  }
+
+  function fmtPts(v) {
+    const n = parseFloat(v);
+    return Number.isInteger(n) ? String(n) : n.toFixed(1);
+  }
+
+  function confirmSubtract() {
+    const input = document.getElementById('subtract-input');
+    const val   = parseFloat(input.value);
+    const errEl = document.getElementById('subtract-error');
+
+    if (!input.value || isNaN(val) || val <= 0) {
+      errEl.textContent = 'Please enter a valid number greater than 0.';
+      input.classList.add('error');
+      return;
+    }
+    if (val > currentPoints) {
+      errEl.textContent = `Cannot subtract more than current points (${fmtPts(currentPoints)}).`;
+      input.classList.add('error');
+      return;
+    }
+
+    fetch("{% url 'subtract_points' student.id %}", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCookie('csrftoken'),
+      },
+      body: JSON.stringify({ amount: val }),
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.success) {
+        currentPoints = data.points;
+        document.getElementById('points-display').textContent = fmtPts(data.points);
+        closeSubtractModal();
+        showToast(`✓ Subtracted ${fmtPts(val)} point${val !== 1 ? 's' : ''} successfully`);
+      } else {
+        errEl.textContent = data.error || 'Failed to subtract points.';
+        input.classList.add('error');
+      }
+    })
+    .catch(() => {
+      errEl.textContent = 'Network error — please try again.';
+      input.classList.add('error');
+    });
+  }
+
+  // Allow Enter/Escape in subtract modal
+  document.getElementById('subtract-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') confirmSubtract();
+    if (e.key === 'Escape') closeSubtractModal();
+  });
+
+  // ─── TOAST ────────────────────────────────────────────────────────────────
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  // ─── CSRF helper (standard Django pattern) ───────────────────────────────
+  function getCookie(name) {
+    let v = null;
+    document.cookie.split(';').forEach(c => {
+      c = c.trim();
+      if (c.startsWith(name + '=')) v = decodeURIComponent(c.slice(name.length + 1));
+    });
+    return v;
+  }
+</script>
 
 </body>
 </html>

@@ -105,8 +105,8 @@ def student_dashboard(request):
         rank                = classroom.students.filter(points__gt=student.points).count() + 1
         total_students      = classroom.students.count()
 
-    points_in_block     = student.points % 10
-    points_to_next_coin = 10 - points_in_block if points_in_block > 0 else 10
+    points_in_block     = float(student.points) % 10
+    points_to_next_coin = round(10 - points_in_block, 1) if points_in_block > 0 else 10
     progress_pct        = (points_in_block / 10) * 100
 
     return render(request, 'student_dashboard.html', {
@@ -337,30 +337,72 @@ def add_points(request, student_id):
             data = {}
 
         try:
-            amount = int(data.get('amount', 1))
+            amount = round(float(data.get('amount', 1)), 1)
         except (ValueError, TypeError):
-            amount = 1
+            amount = 1.0
 
-        if amount < 1:
-            return JsonResponse({'success': False, 'error': 'Amount must be at least 1.'})
+        if amount <= 0:
+            return JsonResponse({'success': False, 'error': 'Amount must be greater than 0.'})
 
         classroom = get_teacher_classroom(request.user)
         if not classroom:
             return JsonResponse({'success': False, 'error': 'No classroom'})
 
         student        = get_object_or_404(classroom.students, id=student_id)
-        coins_before   = student.points // 10
-        student.points += amount
-        coins_after    = student.points // 10
+        coins_before   = int(float(student.points)) // 10
+        student.points = round(float(student.points) + amount, 1)
+        coins_after    = int(float(student.points)) // 10
         new_coins      = coins_after - coins_before
         student.coins += new_coins
         student.save()
 
         return JsonResponse({
             'success':   True,
-            'points':    student.points,
+            'points':    float(student.points),
             'coins':     student.coins,
             'new_coins': new_coins,
+        })
+
+    return JsonResponse({'success': False, 'error': 'Invalid method'})
+
+
+@csrf_exempt
+@login_required(login_url='/signin/')
+def subtract_points(request, student_id):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+        except json.JSONDecodeError:
+            data = {}
+
+        try:
+            amount = round(float(data.get('amount', 1)), 1)
+        except (ValueError, TypeError):
+            amount = 1.0
+
+        if amount <= 0:
+            return JsonResponse({'success': False, 'error': 'Amount must be greater than 0.'})
+
+        classroom = get_teacher_classroom(request.user)
+        if not classroom:
+            return JsonResponse({'success': False, 'error': 'No classroom'})
+
+        student = get_object_or_404(classroom.students, id=student_id)
+
+        if amount > float(student.points):
+            return JsonResponse({'success': False, 'error': f'Cannot subtract more than current points ({float(student.points)}).'})
+
+        coins_before    = int(float(student.points)) // 10
+        student.points  = round(max(0.0, float(student.points) - amount), 1)
+        coins_after     = int(float(student.points)) // 10
+        lost_coins      = coins_before - coins_after
+        student.coins   = max(0, student.coins - lost_coins)
+        student.save()
+
+        return JsonResponse({
+            'success': True,
+            'points':  float(student.points),
+            'coins':   student.coins,
         })
 
     return JsonResponse({'success': False, 'error': 'Invalid method'})
